@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-// @ts-ignore
 import {
   AutoTokenizer,
   MusicgenForConditionalGeneration,
@@ -195,7 +194,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
               {modelLoaded &&
                 (track !== "" ? (
                   <div className="mx-auto">
-                    <audio controls type="audio/wav" src={track} />
+                    <audio controls src={track} />
                   </div>
                 ) : (
                   <div className="mx-auto w-full max-w-sm border rounded-xl p-6 bg-amber-900/10 border-white/10 overflow-hidden transition-all duration-200">
