@@ -129,10 +129,8 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
     setStatusText("Done!");
   };
 
-  console.log("track is", track);
-
   return (
-    <main className="grid grid-cols-2 gap-20">
+    <main className="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-20">
       <div className="grid grid-cols-1 gap-10">
         {children}
         <Prompt
