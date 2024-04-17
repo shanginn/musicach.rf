@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react"
 import { useUpdateEffect } from "react-use";
 
-import { LENGTHS, STYLES, MOODS } from "@/utils";
+import { LENGTHS, STYLES, MOODS, MUSIC_PROMPTS } from "@/utils";
 
 export const useGeneration = () => {
     const [form, setForm] = useState({
@@ -71,6 +71,15 @@ export const useGeneration = () => {
     })
   }
 
+  const randomize = () => {
+    setForm({
+      length: LENGTHS[Math.floor(Math.random() * LENGTHS.length)].value,
+      style: STYLES[Math.floor(Math.random() * STYLES.length)].value,
+      mood: MOODS[Math.floor(Math.random() * MOODS.length)].value,
+      prompt: MUSIC_PROMPTS[Math.floor(Math.random() * MUSIC_PROMPTS.length)]
+    })
+  }
+
   return {
     form,
     setForm,
@@ -79,5 +88,6 @@ export const useGeneration = () => {
     results,
     loading,
     setResults,
+    randomize
   }
 }

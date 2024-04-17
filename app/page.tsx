@@ -10,7 +10,8 @@ export default function Home() {
             Start making music with AI
           </h1>
           <h2 className="text-white/70 font-medium mt-2 text-lg">
-            In-browser text-to-music generation
+            <span className="text-white font-semibold">In-browser</span>{" "}
+            text-to-music generation
           </h2>
         </header>
       </Form>

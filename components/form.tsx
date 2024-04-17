@@ -46,7 +46,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
     generate,
     results,
     loading,
-    setResults,
+    randomize,
   } = useGeneration();
 
   const modelPromise = useRef(null);
@@ -88,7 +88,9 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
     setStatusText(
       progress === 1
         ? "Ready!"
-        : `Loading model (${(progress * 100).toFixed()}% of 656MB)...`
+        : `Loading In-Browser model (${(
+            progress * 100
+          ).toFixed()}% of 656MB)...`
     );
     if (progress === 1) {
       setTimeout(() => setModelLoaded(true), 1500);
@@ -130,12 +132,13 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <main className="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-20">
+    <main className="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-20 relative">
       <div className="grid grid-cols-1 gap-10">
         {children}
         <Prompt
           value={form.prompt}
           onChange={(value) => setForm({ ...form, prompt: value })}
+          onRandomize={randomize}
         />
         <Length
           value={form.length}
@@ -221,7 +224,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
       </div>
       <div
         className={classNames(
-          "absolute right-10 bottom-10 w-full max-w-sm border rounded-xl p-6 bg-amber-900/10 border-white/10 overflow-hidden transition-all duration-200",
+          "absolute right-0 bottom-10 w-full max-w-sm border rounded-xl p-6 bg-amber-900/10 border-white/10 overflow-hidden transition-all duration-200",
           {
             "opacity-0 pointer-events-none translate-y-full": modelLoaded,
           }

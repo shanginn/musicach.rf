@@ -16,7 +16,7 @@ export const Styles = ({
   return (
     <div>
       <p className="text-white font-semibold text-base mb-4">Select a style</p>
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 relative z-[1]">
+      <div className="grid grid-cols-2 xl:grid-cols-3 gap-2 relative z-[1]">
         {STYLES.slice(viewAll ? 0 : 0, viewAll ? STYLES.length : 9).map(
           (style) => (
             <div

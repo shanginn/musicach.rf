@@ -29,7 +29,7 @@ export const Length = ({
 
   return (
     <div ref={ref} className="max-w-max">
-      <p className="text-white font-semibold text-base mb-4">Prompt</p>
+      <p className="text-white font-semibold text-base mb-4">Duration</p>
       <div className="relative z-1">
         <p
           className="text-transparent bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-5xl font-extrabold cursor-pointer relative"
