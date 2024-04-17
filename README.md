@@ -6,7 +6,7 @@ emoji: 🎶
 colorFrom: purple
 colorTo: pink
 sdk: docker
-app_port: 3002
+app_port: 3000
 pinned: false
 license: mit
 ---
