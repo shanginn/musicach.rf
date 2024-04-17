@@ -163,13 +163,21 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
             </p>
           </div>
           <button
-            className="rounded-xl bg-stone-900/90 border-white/5 border px-6 py-3 font-semibold text-base text-white mt-6 hover:brightness-125 transition-all duration-200"
+            className={classNames(
+              "rounded-xl bg-stone-900/90 border-white/5 border px-6 py-3 font-semibold text-base text-white mt-6 hover:brightness-125 transition-all duration-200",
+              {
+                "animate-pulse": loading,
+                "opacity-50 !cursor-not-allowed": !modelLoaded,
+              }
+            )}
+            disabled={loading || !modelLoaded}
             onClick={() => {
+              if (loading || !modelLoaded) return;
               generate();
               generateMusic();
             }}
           >
-            Generate track
+            {!modelLoaded ? "Waiting for model loaded" : "Generate music"}
           </button>
           {(loading || results?.title || results?.cover) && (
             <div className="mt-6 space-y-6 flex flex-col">
