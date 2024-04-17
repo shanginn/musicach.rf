@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+// @ts-ignore
 import {
   AutoTokenizer,
   MusicgenForConditionalGeneration,
@@ -78,7 +79,9 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
     let loaded = 0;
     let total = 0;
     for (const data of Object.values(loadProgress)) {
+      // @ts-ignore
       loaded += data.loaded;
+      // @ts-ignore
       total += data.total;
     }
     const progress = loaded / total;
