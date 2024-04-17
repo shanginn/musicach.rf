@@ -47,6 +47,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
     results,
     loading,
     randomize,
+    setResults,
   } = useGeneration();
 
   const modelPromise = useRef(null);
@@ -174,6 +175,8 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
             disabled={loading || !modelLoaded}
             onClick={() => {
               if (loading || !modelLoaded) return;
+              setResults({ cover: null, title: null });
+              setTrack("");
               generate();
               generateMusic();
             }}
