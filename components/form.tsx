@@ -227,7 +227,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
       </div>
       <div
         className={classNames(
-          "fixed right-10 bottom-10 w-full max-w-sm border rounded-xl p-6 bg-amber-900/10 border-white/10 overflow-hidden transition-all duration-200",
+          "fixed lg:right-10 lg:bottom-10 w-[calc(100%-24px)] bottom-6 max-lg:left-1/2 max-lg:-translate-x-1/2 z-20 lg:w-full max-w-sm border rounded-xl p-6 bg-stone-950 lg:bg-amber-900/10 border-white/10 overflow-hidden transition-all duration-200",
           {
             "opacity-0 pointer-events-none translate-y-full": modelLoaded,
           }
