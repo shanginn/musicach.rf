@@ -7,7 +7,7 @@ colorFrom: purple
 colorTo: pink
 sdk: docker
 app_port: 3000
-pinned: false
+pinned: true
 license: mit
 ---
 
