@@ -154,7 +154,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
           onChange={(value) => setForm({ ...form, mood: value })}
         />
       </div>
-      <div className="max-lg:pb-12">
+      <div className="max-lg:pb-16">
         <div className="w-full sticky top-0">
           <div className="border rounded-xl p-6 bg-stone-900/40 border-white/5">
             <p className="text-amber-200 font-semibold text-xs uppercase mb-3">
