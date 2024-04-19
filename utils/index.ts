@@ -267,3 +267,17 @@ function writeString(view: any, offset: number, string: string) {
 }
 
 export const MODEL_ID = 'Xenova/musicgen-small';
+
+export async function share(body: any, settings: Record<string, any>, results: Record<string, any>) {
+  const response = await fetch('https://huggingface.co/uploads', { method: 'POST', body });
+  if (!response.ok) throw new Error(`Failed to upload audio: ${response.statusText}`);
+  const url = await response.text();
+
+  const params = new URLSearchParams({
+      title: `🎵 ${results.title}`,
+      description: `<audio controls src="${url}"></audio>\n${JSON.stringify(settings, null, 2)}`,
+  });
+
+  const shareURL = `https://huggingface.co/spaces/enzostvs/ai-jukebox/discussions/new?${params.toString()}`;
+  window.open(shareURL, '_blank');
+}

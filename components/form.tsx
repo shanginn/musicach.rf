@@ -11,8 +11,8 @@ import { Length } from "@/components/length";
 import { Styles } from "@/components/styles";
 import { Moods } from "@/components/moods";
 import { useGeneration } from "@/components/hooks/useGeneration";
-import { useState, useRef, useEffect } from "react";
-import { encodeWAV, MODEL_ID } from "@/utils";
+import { useState, useRef, useEffect, useMemo } from "react";
+import { encodeWAV, MODEL_ID, share } from "@/utils";
 import classNames from "classnames";
 
 class CallbackStreamer extends BaseStreamer {
@@ -38,6 +38,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
   const [statusText, setStatusText] = useState("Loading model (656MB)...");
   const [loadProgress, setLoadProgress] = useState({});
   const [track, setTrack] = useState("");
+  const [shareLoading, setShareLoading] = useState(false);
 
   const {
     form,
@@ -52,6 +53,8 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
 
   const modelPromise = useRef(null);
   const tokenizerPromise = useRef(null);
+
+  const SHARING_ENABLED = window?.location?.host.endsWith(".hf.space");
 
   useEffect(() => {
     modelPromise.current ??= MusicgenForConditionalGeneration.from_pretrained(
@@ -205,8 +208,34 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
               )}
               {modelLoaded &&
                 (track !== "" ? (
-                  <div className="mx-auto">
+                  <div className="mx-auto flex flex-col gap-5 justify-center">
                     <audio controls src={track} />
+                    {SHARING_ENABLED && (
+                      <button
+                        className={classNames(
+                          "rounded-xl bg-amber-500/10 border-amber-500 border px-6 py-3 font-semibold text-base text-amber-500 mt-6 hover:bg-amber-500 hover:text-white transition-all duration-200 relative",
+                          {
+                            "animate-pulse": shareLoading,
+                          }
+                        )}
+                        onClick={async (e) => {
+                          if (shareLoading) return;
+                          await share(
+                            track,
+                            {
+                              mood: form.mood,
+                              style: form.style,
+                              duration: form.length,
+                              prompt: form.prompt,
+                              formatted_prompt: formattedPrompt,
+                            },
+                            results
+                          );
+                        }}
+                      >
+                        Share my song
+                      </button>
+                    )}
                   </div>
                 ) : (
                   <div className="mx-auto w-full max-w-sm border rounded-xl p-6 bg-amber-900/10 border-white/10 overflow-hidden transition-all duration-200">
