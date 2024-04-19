@@ -196,13 +196,13 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
               ) : (
                 <div className="w-[300px] h-[300px] bg-stone-900 animate-pulse rounded-xl mx-auto"></div>
               )}
-              {/* {results.title ? (
+              {results.title ? (
                 <p className="text-center text-white font-bold text-3xl">
                   {results.title}
                 </p>
               ) : (
                 <div className="w-[450px] h-8 bg-stone-900 animate-pulse rounded-xl mx-auto"></div>
-              )} */}
+              )}
               {modelLoaded &&
                 (track !== "" ? (
                   <div className="mx-auto">
