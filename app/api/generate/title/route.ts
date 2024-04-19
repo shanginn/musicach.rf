@@ -27,7 +27,9 @@ export async function POST(
   })
   .then((response) => {
     let title = response?.[0]?.generated_text;
-    title = title?.substring(title.indexOf('"') + 1, title.lastIndexOf('"'))
+    // regex to keep only string between quotes
+    title = title?.match(/"(.*?)"/)?.[0];
+    
     return {
       title: title,
     }
