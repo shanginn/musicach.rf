@@ -269,8 +269,7 @@ function writeString(view: any, offset: number, string: string) {
 export const MODEL_ID = 'Xenova/musicgen-small';
 
 export async function share(body: any, settings: Record<string, any>, results: Record<string, any>) {
-  const blobAudio = new Blob([body], { type: 'audio/wav' });
-  const response = await fetch('https://huggingface.co/uploads', { method: 'POST', body:  blobAudio });
+  const response = await fetch('https://huggingface.co/uploads', { method: 'POST', body });
   if (!response.ok) throw new Error(`Failed to upload audio: ${response.statusText}`);
   const url = await response.text();
 

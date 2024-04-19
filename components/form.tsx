@@ -39,6 +39,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
   const [loadProgress, setLoadProgress] = useState({});
   const [track, setTrack] = useState("");
   const [shareLoading, setShareLoading] = useState(false);
+  const [blob, setBlob] = useState<Blob | null>(null);
 
   const {
     form,
@@ -131,6 +132,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
     const sampling_rate = model.config.audio_encoder.sampling_rate;
     const wav = encodeWAV(audio_values.data, sampling_rate);
     const blob = new Blob([wav], { type: "audio/wav" });
+    setBlob(blob);
     setTrack(URL.createObjectURL(blob));
     setStatusText("Done!");
   };
@@ -183,6 +185,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
             onClick={() => {
               if (loading || !modelLoaded) return;
               setResults({ cover: null, title: null });
+              setBlob(null);
               setTrack("");
               generate();
               generateMusic();
@@ -226,7 +229,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
                           if (shareLoading) return;
                           setShareLoading(true);
                           await share(
-                            track,
+                            blob,
                             {
                               mood: form.mood,
                               style: form.style,
