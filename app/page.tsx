@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <section className="h-screen p-12 lg:p-24 bg-stone-950 relative z-[1] overflow-y-auto">
+    <section className="h-screen p-8 lg:p-24 bg-stone-950 relative z-[1] overflow-y-auto">
       <Form>
         <header>
           <h1 className="text-white font-bold text-3xl">
