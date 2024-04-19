@@ -210,7 +210,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
                   </div>
                 ) : (
                   <div className="mx-auto w-full max-w-sm border rounded-xl p-6 bg-amber-900/10 border-white/10 overflow-hidden transition-all duration-200">
-                    <p className="text-sm text-left mb-4 uppercase font-medium">
+                    <p className="text-sm text-left mb-4 uppercase font-medium text-white">
                       {statusText}
                     </p>
                     <div className="bg-gray-200 h-2.5 w-full rounded-full overflow-hidden">
