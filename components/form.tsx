@@ -158,7 +158,11 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
         />
       </div>
       <div className="max-lg:pb-16">
-        <div className="w-full sticky top-0">
+        <div
+          className={classNames("w-full", {
+            "sticky top-0": !track,
+          })}
+        >
           <div className="border rounded-xl p-6 bg-stone-900/40 border-white/5">
             <p className="text-amber-200 font-semibold text-xs uppercase mb-3">
               Generated prompt
@@ -218,8 +222,9 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
                             "animate-pulse": shareLoading,
                           }
                         )}
-                        onClick={async (e) => {
+                        onClick={async () => {
                           if (shareLoading) return;
+                          setShareLoading(true);
                           await share(
                             track,
                             {
@@ -231,9 +236,10 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
                             },
                             results
                           );
+                          setShareLoading(false);
                         }}
                       >
-                        Share my song
+                        {shareLoading ? "Sharing..." : "Share my song"}
                       </button>
                     )}
                   </div>
