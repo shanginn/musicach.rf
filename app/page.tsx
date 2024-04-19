@@ -15,7 +15,7 @@ export default function Home() {
           </h2>
         </header>
       </Form>
-      <div className="w-full lg:w-[400px] h-[250px] lg:h-[400px] bg-gradient-to-br from-amber-300 to-amber-600 absolute left-0 top-0 -z-[1] blur-2xl lg:blur-[230px]" />
+      <div className="w-full lg:w-[400px] h-[250px] lg:h-[400px] bg-gradient-to-br from-amber-300 to-amber-600 absolute left-0 top-0 -z-[1] blur-2xl lg:blur-[230px] max-lg:opacity-60" />
     </section>
   );
 }
