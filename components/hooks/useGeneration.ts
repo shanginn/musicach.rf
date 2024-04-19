@@ -54,21 +54,21 @@ export const useGeneration = () => {
       })
     })
 
-    fetch("/api/generate/title", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        prompt: form.prompt
-      })
-    }).then((res) => res.json())
-    .then((res: any) => {
-      new_results.title = res.title
-      setResults({
-        ...new_results,
-      })
-    })
+    // fetch("/api/generate/title", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify({
+    //     prompt: form.prompt
+    //   })
+    // }).then((res) => res.json())
+    // .then((res: any) => {
+    //   new_results.title = res.title
+    //   setResults({
+    //     ...new_results,
+    //   })
+    // })
   }
 
   const randomize = () => {
