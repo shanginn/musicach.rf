@@ -224,6 +224,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
                           "rounded-xl bg-amber-500/10 border-amber-500 border px-6 py-3 font-semibold text-base text-amber-500 mt-6 hover:bg-amber-500 hover:text-white transition-all duration-200 relative",
                           {
                             "animate-pulse": shareLoading,
+                            "opacity-50 !cursor-not-allowed": hasBeenShared,
                           }
                         )}
                         onClick={async () => {
