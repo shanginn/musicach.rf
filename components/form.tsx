@@ -155,7 +155,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
         />
       </div>
       <div>
-        <div className="w-full sticky top-10">
+        <div className="w-full sticky top-0">
           <div className="border rounded-xl p-6 bg-stone-900/40 border-white/5">
             <p className="text-amber-200 font-semibold text-xs uppercase mb-3">
               Generated prompt
@@ -227,7 +227,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
       </div>
       <div
         className={classNames(
-          "absolute right-0 bottom-10 w-full max-w-sm border rounded-xl p-6 bg-amber-900/10 border-white/10 overflow-hidden transition-all duration-200",
+          "fixed right-10 bottom-10 w-full max-w-sm border rounded-xl p-6 bg-amber-900/10 border-white/10 overflow-hidden transition-all duration-200",
           {
             "opacity-0 pointer-events-none translate-y-full": modelLoaded,
           }
