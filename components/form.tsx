@@ -40,6 +40,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
   const [track, setTrack] = useState("");
   const [shareLoading, setShareLoading] = useState(false);
   const [blob, setBlob] = useState<Blob | null>(null);
+  const [hasBeenShared, setHasBeenShared] = useState(false);
 
   const {
     form,
@@ -226,7 +227,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
                           }
                         )}
                         onClick={async () => {
-                          if (shareLoading) return;
+                          if (shareLoading || hasBeenShared) return;
                           setShareLoading(true);
                           await share(
                             blob,
@@ -240,9 +241,14 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
                             results
                           );
                           setShareLoading(false);
+                          setHasBeenShared(true);
                         }}
                       >
-                        {shareLoading ? "Sharing..." : "Share my song"}
+                        {shareLoading
+                          ? "Sharing..."
+                          : hasBeenShared
+                          ? "Shared"
+                          : "Share my song"}
                       </button>
                     )}
                   </div>
