@@ -154,7 +154,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
           onChange={(value) => setForm({ ...form, mood: value })}
         />
       </div>
-      <div>
+      <div className="max-lg:pb-12">
         <div className="w-full sticky top-0">
           <div className="border rounded-xl p-6 bg-stone-900/40 border-white/5">
             <p className="text-amber-200 font-semibold text-xs uppercase mb-3">
@@ -227,7 +227,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
       </div>
       <div
         className={classNames(
-          "fixed lg:right-10 lg:bottom-10 w-[calc(100%-24px)] bottom-6 max-lg:left-1/2 max-lg:-translate-x-1/2 z-20 lg:w-full max-w-sm border rounded-xl p-6 bg-stone-950 lg:bg-amber-900/10 border-white/10 overflow-hidden transition-all duration-200",
+          "fixed lg:right-10 w-[calc(100%-24px)] max-lg:top-6 lg:bottom-10 max-lg:left-1/2 max-lg:-translate-x-1/2 z-20 lg:w-full max-w-sm border rounded-xl p-6 bg-stone-950 lg:bg-amber-900/10 border-white/10 overflow-hidden transition-all duration-200",
           {
             "opacity-0 pointer-events-none translate-y-full": modelLoaded,
           }
