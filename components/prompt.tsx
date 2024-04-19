@@ -20,7 +20,7 @@ export const Prompt = ({
           type="text"
           value={value}
           placeholder="80s pop track with bassy drums and synth"
-          className="w-full p-2 transition-all duration-200 bg-transparent text-white px-5 py-5 text-lg outline-none border-none flex-1"
+          className="w-full p-2 transition-all duration-200 bg-transparent text-white px-5 py-5 text-base lg:text-lg outline-none border-none flex-1"
           onInput={handleChange}
         />
         <BsDice3Fill
