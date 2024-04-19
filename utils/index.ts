@@ -6,6 +6,10 @@ export const LENGTHS = [
 ];
 
 export const STYLES = [{
+  value: "none",
+  prompt: "",
+  label: "None",
+},{
   value: "hiphop",
   prompt: "Hip Hop and Rap track",
   label: "Hip Hop",
@@ -113,6 +117,11 @@ export const STYLES = [{
 }]
 
 export const MOODS = [{
+  value: "none",
+  label: "None",
+  prompt: "",
+  emoji: ""
+},{
   value: "happy",
   label: "Happy",
   prompt: "with an happy vibe",

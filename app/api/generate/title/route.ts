@@ -18,7 +18,7 @@ export async function POST(
       parameters: {
         num_return_sequences: 1,
         return_full_text: false,
-
+        do_sample: false,
       }
     }),
   })

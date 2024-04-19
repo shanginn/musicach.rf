@@ -22,7 +22,7 @@ export const Styles = ({
             <div
               key={style.label}
               className={classNames(
-                "w-full cursor-pointer transition-all duration-200 opacity-40 hover:opacity-100 rounded-xl bg-cover bg-center relative px-2 py-8 bg-gray-700 text-center font-bold text-white text-xl z-[1] overflow-hidden",
+                "w-full cursor-pointer transition-all duration-200 opacity-40 hover:opacity-100 rounded-xl bg-cover bg-center relative px-2 py-8 bg-amber-900 text-center font-bold text-white text-xl z-[1] overflow-hidden",
                 {
                   "!opacity-100 ring-[4px] ring-white/50":
                     style.value === value,
