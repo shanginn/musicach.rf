@@ -116,7 +116,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
 
     const streamer = new CallbackStreamer((value: string) => {
       const percent = value === undefined ? 1 : value[0].length / max_length;
-      setStatusText(`Generating (${(percent * 100).toFixed()}%)...`);
+      setStatusText(`Generating in your browser (${(percent * 100).toFixed()}%)...`);
       setProgress(percent);
     });
 
