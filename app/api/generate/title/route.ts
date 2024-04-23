@@ -7,7 +7,7 @@ export async function POST(
 ) {
   const { prompt } = await request.json();
 
-  const response = await fetch("https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-orpo-141b-A35b-v0.1", {
+  const response = await fetch("https://api-inference.huggingface.co/models/HuggingFaceH4/starchat2-15b-v0.1", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${process.env.HF_TOKEN}`,
@@ -16,7 +16,7 @@ export async function POST(
     },
     body: JSON.stringify({
       // inputs: `Generate and return only a music title based on the following prompt: ${prompt}`,
-      inputs: `Generate a music title based on the following prompt: ${prompt}, return only the title between quotes.`,
+      inputs: `Generate a SHORT music song title based on the following prompt: ${prompt}, return only the title between quotes.`,
       parameters: {
         num_return_sequences: 1,
         return_full_text: false,
@@ -25,7 +25,9 @@ export async function POST(
     }),
   })
   .then((response: any) => {
-    if (response.status !== 200) return Response.json({ status: 500, ok: false, message: response.statusText })
+    if (response.status !== 200) return {
+      title: 'Без названия',
+    }
 
     return response.json()
   })
