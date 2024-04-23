@@ -29,13 +29,13 @@ export const Length = ({
 
   return (
     <div ref={ref} className="max-w-max">
-      <p className="text-white font-semibold text-base mb-4">Duration</p>
+      <p className="text-white font-semibold text-base mb-4">Продолжительность</p>
       <div className="relative z-1">
         <p
           className="text-transparent bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-5xl font-extrabold cursor-pointer relative"
           onClick={() => setOpen(!open)}
         >
-          {label}s
+          {label}с
           <FiChevronDown
             className={classNames(
               "inline-block text-white text-2xl ml-2 transition-all duration-200",
@@ -59,7 +59,7 @@ export const Length = ({
               className="text-white text-base hover:from-blue-500/40 hover:to-pink-500/40 bg-gradient-to-r transition-all duration-200 p-2 rounded-md cursor-pointer"
               onClick={() => onChange(length.value)}
             >
-              {length.label} seconds
+              {length.label} секунд
             </li>
           ))}
         </ul>

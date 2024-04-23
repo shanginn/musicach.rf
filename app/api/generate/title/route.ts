@@ -14,7 +14,7 @@ export async function POST(
     },
     body: JSON.stringify({
       // inputs: `Generate and return only a music title based on the following prompt: ${prompt}`,
-      inputs: `Generate a music title based on the following prompt: ${prompt}, return only the title between quotes.`,
+      inputs: `Generate a music title in Russian language based on the following prompt: ${prompt}, return only the title between quotes.`,
       parameters: {
         num_return_sequences: 1,
         return_full_text: false,

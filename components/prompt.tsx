@@ -14,7 +14,7 @@ export const Prompt = ({
   };
   return (
     <div>
-      <p className="text-white font-semibold text-base mb-5">Prompt</p>
+      <p className="text-white font-semibold text-base mb-5">Запрос (на английском)</p>
       <div className="w-full border border-white/10 bg-black/10 focus-within:border-amber-200/20 focus-within:bg-amber-950/10 rounded-xl overflow-hidden flex items-center justify-between pr-5">
         <input
           type="text"

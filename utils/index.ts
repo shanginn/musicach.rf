@@ -118,97 +118,97 @@ export const STYLES = [{
 
 export const MOODS = [{
   value: "none",
-  label: "None",
+  label: "Нет",
   prompt: "",
   emoji: ""
 },{
   value: "happy",
-  label: "Happy",
+  label: "Счастье",
   prompt: "with an happy vibe",
   emoji: "😊"
 }, {
   value: "sad",
-  label: "Sad",
+  label: "Грусть",
   prompt: "with a sad vibe",
   emoji: "😢"
 }, {
   value: "angry",
-  label: "Angry",
+  label: "Злость",
   prompt: "with an angry vibe",
   emoji: "😡"
 }, {
   value: "chill",
-  label: "Chill",
+  label: "Спокойный",
   prompt: "with a chill vibe",
   emoji: "😌"
 }, {
   value: "romantic",
-  label: "Romantic",
+  label: "Романтик",
   prompt: "with a romantic vibe",
   emoji: "😍"
 }, {
   value: "epic",
-  label: "Epic",
+  label: "Эпик",
   prompt: "with an epic vibe",
   emoji: "🚀"
 }, {
   value: "energetic",
-  label: "Energetic",
+  label: "Энергичный",
   prompt: "with an energetic vibe",
   emoji: "🔥"
 }, {
   value: "dreamy",
-  label: "Dreamy",
+  label: "Мечта",
   prompt: "with a dreamy vibe",
   emoji: "🌌"
 }, {
   value: "mysterious",
-  label: "Mysterious",
+  label: "Тайна",
   prompt: "with a mysterious vibe",
   emoji: "🕵️"
 }, {
   value: "relaxing",
-  label: "Relaxing",
+  label: "Релакс",
   prompt: "with a relaxing vibe",
   emoji: "😴"
 }, {
   value: "dark",
-  label: "Dark",
+  label: "Темный",
   prompt: "with a dark vibe",
   emoji: "🖤"
 }, {
   value: "upbeat",
-  label: "Upbeat",
+  label: "Веселый",
   prompt: "with an upbeat vibe",
   emoji: "🎉"
 }, {
   value: "motivational",
-  label: "Motivational",
+  label: "Мотивация",
   prompt: "with a motivational vibe",
   emoji: "💪"
 }, {
   value: "inspiring",
-  label: "Inspiring",
+  label: "Вдохновение",
   prompt: "with an inspiring vibe",
   emoji: "🌟"
 }, {
   value: "nostalgic",
-  label: "Nostalgic",
+  label: "Ностальгия",
   prompt: "with a nostalgic vibe",
   emoji: "📼"
 }, {
   value: "groovy",
-  label: "Groovy",
+  label: "Крутой",
   prompt: "with a groovy vibe",
   emoji: "🕺"
 }, {
   value: "melancholic",
-  label: "Melancholic",
+  label: "Меланхолия",
   prompt: "with a melancholic vibe",
   emoji: "😔"
 }, {
   value: "hopeful",
-  label: "Hopeful",
+  label: "Надежда",
   prompt: "with a hopeful vibe",
   emoji: "🌈"
 }]

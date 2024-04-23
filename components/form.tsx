@@ -93,8 +93,8 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
     setProgress(progress);
     setStatusText(
       progress === 1
-        ? "Ready!"
-        : `Loading In-Browser model (${(
+        ? "Готово!"
+        : `Загружаем модель в браузер (${(
             progress * 100
           ).toFixed()}% of 656MB)...`
     );
@@ -116,7 +116,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
 
     const streamer = new CallbackStreamer((value: string) => {
       const percent = value === undefined ? 1 : value[0].length / max_length;
-      setStatusText(`Generating in your browser (${(percent * 100).toFixed()}%)...`);
+      setStatusText(`Генерация у вас в браузере (не закрывайте вкладку) (${(percent * 100).toFixed()}%)...`);
       setProgress(percent);
     });
 
@@ -168,7 +168,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
         >
           <div className="border rounded-xl p-6 bg-stone-900/40 border-white/5">
             <p className="text-amber-200 font-semibold text-xs uppercase mb-3">
-              Generated prompt
+              Итоговый запрос
             </p>
             <p className="text-white text-xl font-semibold">
               &quot;{formattedPrompt}&quot;
@@ -192,14 +192,14 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
               generateMusic();
             }}
           >
-            {!modelLoaded ? "Waiting for model loaded" : "Generate music"}
+            {!modelLoaded ? "Ждём загрузки модели" : "Создать музыку"}
           </button>
           {(loading || results?.title || results?.cover) && (
             <div className="mt-6 space-y-6 flex flex-col">
               {results.cover ? (
                 <Image
                   src={results.cover}
-                  alt="Cover art"
+                  alt="Обложка"
                   className="w-[300px] h-[300px] object-contain bg-amber-950 rounded-xl mx-auto"
                   width={300}
                   height={300}

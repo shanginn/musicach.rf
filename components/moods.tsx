@@ -15,7 +15,7 @@ export const Moods = ({
 
   return (
     <div>
-      <p className="text-white font-semibold text-base mb-4">Select a mood</p>
+      <p className="text-white font-semibold text-base mb-4">Выберите настроение</p>
       <div className="grid grid-cols-2 xl:grid-cols-4 gap-2 relative z-[1]">
         {MOODS.slice(viewAll ? 0 : 0, viewAll ? MOODS.length : 12).map(
           (style) => {
