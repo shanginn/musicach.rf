@@ -56,7 +56,7 @@ export const Form = ({ children }: { children: React.ReactNode }) => {
   const modelPromise = useRef(null);
   const tokenizerPromise = useRef(null);
 
-  const SHARING_ENABLED = true;
+  const SHARING_ENABLED = false;
 
   useEffect(() => {
     modelPromise.current ??= MusicgenForConditionalGeneration.from_pretrained(
