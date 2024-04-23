@@ -12,3 +12,5 @@ license: mit
 ---
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+
+Original: https://huggingface.co/spaces/enzostvs/ai-jukebox
